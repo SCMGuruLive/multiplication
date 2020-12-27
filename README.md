@@ -1,2 +1,2 @@
-# multiplication-tables
-Learn multiplication tables
+# multiplication
+Learn multiplication
