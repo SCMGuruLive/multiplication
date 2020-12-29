@@ -18,24 +18,26 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+import random
+
 def facts():
     print('')
 
     multiplicand = int(input('What facts do you want to see? '))
 
-    for multiplier in range(1,13):
+    for multiplier in range(0,13):
         product = multiplicand * multiplier
         print('')
         print(f'{multiplicand} x {multiplier} = {product}')
 
-def test_ordered_range():
+def ordered_facts():
     print('')
 
     print('')
     
     multiplicand = int(input('What facts do you want to test? '))
 
-    for multiplier in range(1,13):
+    for multiplier in range(0,13):
         product = multiplicand * multiplier
         print('')
         print(f'What is {multiplicand} x {multiplier}? ', end='')
@@ -46,16 +48,33 @@ def test_ordered_range():
         else:
             print('Not correct.')
 
-# def test_random_range():
+def random_facts():
+    print('')
 
-# def test_random_all():
+    print('')
+    
+    multiplicand = int(input('What facts do you want to test? '))
+
+    for multiplier in range(0,13):
+        multiplier = random.randint(0,13)
+        product = multiplicand * multiplier
+        print('')
+        print(f'What is {multiplicand} x {multiplier}? ', end='')
+        answer = input()
+        answer = int(answer)
+        if answer == product:
+            print('Correct!')
+        else:
+            print('Not correct.')
+
+# def random_all_facts():
 
 def table():
     print('')
 
     print('   ', end='')
 
-    for multiplier in range(1,9):
+    for multiplier in range(0,9):
         print(f' {multiplier} ', end='')
 
     for multiplier in range(9,10):
@@ -68,8 +87,52 @@ def table():
 
     print('  x', end='')
 
-    for multiplier in range(1,40):
+    for multiplier in range(1,43):
         print('_', end='')
+
+    print('')
+
+    print(' 0| ', end='')
+
+    multiplicand = 0
+
+    for multiplier in range(1,3):
+        product = multiplicand * multiplier
+        print(f'{product}  ', end='')
+
+    for multiplier in range(3,4):
+        product = multiplicand * multiplier
+        print(f'{product} ', end='')
+
+    for multiplier in range(4,9):
+        product = multiplicand * multiplier
+        print(f' {product}', end='')
+
+    for multiplier in range(9,13):
+        product = multiplicand * multiplier
+        print(f'  {product}', end='')
+
+    print('')
+    
+    print(' 1| ', end='')
+
+    multiplicand = 1
+
+    for multiplier in range(1,3):
+        product = multiplicand * multiplier
+        print(f'{product}  ', end='')
+
+    for multiplier in range(3,4):
+        product = multiplicand * multiplier
+        print(f'{product} ', end='')
+
+    for multiplier in range(4,9):
+        product = multiplicand * multiplier
+        print(f' {product}', end='')
+
+    for multiplier in range(9,13):
+        product = multiplicand * multiplier
+        print(f'  {product}', end='')
 
     print('')
 
@@ -258,11 +321,13 @@ def table():
         print(f'{product} ', end='')
 
 def main():
-    facts()
+    #facts()
 
-    table()
+    #table()
 
-    test_ordered_range()
+    #ordered_facts()
+
+    random_facts()
 
     print('')
 
